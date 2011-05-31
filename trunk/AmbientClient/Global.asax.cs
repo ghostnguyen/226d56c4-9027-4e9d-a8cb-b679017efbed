@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using System.Data.Entity;
+using AmbientClient.Models;
 
 namespace AmbientClient
 {
@@ -35,6 +37,9 @@ namespace AmbientClient
 
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
+
+            //Database.SetInitializer<DB>(new DBInit());
+            Database.SetInitializer<DB>(new DropCreateDatabaseIfModelChanges<DB>());
         }
     }
 }
