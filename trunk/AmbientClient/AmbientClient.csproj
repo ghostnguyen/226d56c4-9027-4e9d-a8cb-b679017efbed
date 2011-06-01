@@ -34,6 +34,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DotNetOpenAuth">
+      <HintPath>..\packages\DotNetOpenAuth.3.4.7.11121\lib\DotNetOpenAuth.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\EntityFramework.4.1.10331.0\lib\EntityFramework.dll</HintPath>
@@ -64,10 +67,13 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\BaseBLL.cs" />
+    <Compile Include="BLL\UserBLL.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helper.cs" />
     <Compile Include="Models\DB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

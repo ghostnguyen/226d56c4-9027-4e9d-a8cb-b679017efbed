@@ -19,17 +19,17 @@ namespace AmbientClient.Models
 
     public class DBInit : DropCreateDatabaseIfModelChanges<DB>
     {
-        //protected override void Seed(DB context)
-        //{
-        //    //context.Database.ExecuteSqlCommand("CREATE UNIQUE INDEX IX_Users_Email ON Users (Title)");
-        //}
+        protected override void Seed(DB context)
+        {
+            context.Database.ExecuteSqlCommand("CREATE UNIQUE INDEX IX_Users_Email ON Users (Email)");
+        }
+
+
     }
 
     public class User
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid Id { get; set; }
-
-        public string Emaila { get; set; }
+        public int Id { get; set; }
+        public string Email { get; set; }
     }
 }

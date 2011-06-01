@@ -38,8 +38,8 @@ namespace AmbientClient
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
 
-            //Database.SetInitializer<DB>(new DBInit());
-            Database.SetInitializer<DB>(new DropCreateDatabaseIfModelChanges<DB>());
+            Database.SetInitializer<DB>(new DBInit());
+            //Database.SetInitializer<DB>(new DropCreateDatabaseIfModelChanges<DB>());
         }
     }
 }
